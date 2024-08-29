@@ -28,12 +28,18 @@ class PublishPostCommand:
         self.stream_id = stream_id
 
     def handle(self) -> None:  
+        if not self.post_exists():
+            raise Exception("Post does not exist")
+        
         if self.post_is_published():
             raise Exception("Post is already published")
 
         event = PostWasPublished()
 
         EventStore.append(self.stream_id, event)
+
+    def post_exists(self):
+        return EventStore.events.get(self.stream_id, None) is not None
 
     def post_is_published(self):
         for event in EventStore.events.get(self.stream_id, []):

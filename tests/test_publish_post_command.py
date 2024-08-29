@@ -1,4 +1,5 @@
 
+from collections import defaultdict
 import uuid
 
 from pytest import fixture
@@ -44,4 +45,10 @@ def test_cannot_publish_post_twice(published_post):
 
     assert len(event_stream) == 2
 
-    
+def test_publish_post_that_doesnt_exist():
+    command = PublishPostCommand(stream_id=uuid.uuid4())  
+
+    with pytest.raises(Exception, match="Post does not exist"):
+        command.handle()
+ 
+    assert EventStore.events == defaultdict(list)
