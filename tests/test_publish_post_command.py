@@ -38,7 +38,7 @@ def test_publish_post_command(post):
 def test_cannot_publish_post_twice(published_post):
     command = PublishPostCommand(stream_id=published_post)
 
-    with pytest.raises(Exception):
+    with pytest.raises(Exception, match="Post is already published"):
         command.handle()
     
     event_stream = EventStore.events.get(published_post, [])
@@ -46,6 +46,8 @@ def test_cannot_publish_post_twice(published_post):
     assert len(event_stream) == 2
 
 def test_publish_post_that_doesnt_exist():
+    EventStore.reset_store()
+    
     command = PublishPostCommand(stream_id=uuid.uuid4())  
 
     with pytest.raises(Exception, match="Post does not exist"):
