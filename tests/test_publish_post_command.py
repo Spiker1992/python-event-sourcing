@@ -6,7 +6,7 @@ from pytest import fixture
 import pytest
 from commands import CreatePostCommand, CreatePostPayload, PublishPostCommand
 from event_store import EventStore
-from events import PostWasCreated, PostWasPublished
+from events import PostWasPublished
 
 @fixture
 def post():
