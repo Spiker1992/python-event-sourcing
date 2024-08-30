@@ -1,7 +1,7 @@
 
 import uuid
 from commands import CreatePostCommand, CreatePostPayload
-from event_store import EventStore
+from commons.event_store import EventStore
 from events import PostWasCreated
 
 
