@@ -16,3 +16,14 @@ This repository contains Python code examples demonstrating various aspects of E
 ## Getting Started:
 
 Refer to the `tests` folder for example usage.
+
+### Docker setup
+
+1. `docker-compose build`
+1. `docker-compose up -d`
+1. `docker exec -it python-es-python-app-1 bash`
+
+
+### Running tests
+
+1. After accessing docker, run `pytest`
