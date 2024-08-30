@@ -1,7 +1,7 @@
 import uuid
-from models import Post, PostTable
+from app.models import Post, PostTable
 from commons.event_store import EventStore
-from events import PostWasCreated
+from app.events import PostWasCreated
 
 
 def test_create_posts():

@@ -1,8 +1,8 @@
 
 import uuid
-from commands import CreatePostCommand, CreatePostPayload
+from app.commands import CreatePostCommand, CreatePostPayload
 from commons.event_store import EventStore
-from events import PostWasCreated
+from app.events import PostWasCreated
 
 
 def test_create_post_command():

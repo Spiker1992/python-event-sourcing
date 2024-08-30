@@ -1,6 +1,6 @@
 import uuid
 from commons.event_store import EventStore
-from events import PostWasCreated
+from app.events import PostWasCreated
 
 
 def test_persist_event():

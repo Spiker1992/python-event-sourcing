@@ -2,7 +2,7 @@ from dataclasses import dataclass
 import uuid
 
 from commons.event_store import EventStore
-from events import PostWasCreated, PostWasPublished
+from app.events import PostWasCreated, PostWasPublished
 
 
 @dataclass
