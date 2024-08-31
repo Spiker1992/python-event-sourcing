@@ -12,10 +12,18 @@ This repository contains Python code examples demonstrating various aspects of E
 
 - **Basic Event Store**: A simple implementation using a `defaultdict` for in-memory storage.
 - **Command and Event Handling**: Demonstrates how to create commands, process them, and persisting events.
+- **Projection**: Projection of an event into a table.
 
 ## Getting Started:
 
 Refer to the `tests` folder for example usage.
+
+Example use of commands:
+- `app/tests/test_create_post_command.py` - shows a basic use of a command with an event being persisted.
+- `app/tests/test_publish_post_command.py` - shows a command that has validation in place. Validation checks if command can be executed.
+
+Example use of projections:
+- `app/tests/test_project_posts.py` - show an example of how we can listen to events. Projection is just one example of a side effect.
 
 ### Docker setup
 
