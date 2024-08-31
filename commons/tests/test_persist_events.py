@@ -1,11 +1,16 @@
 import uuid
 from commons.event_store import EventStore
-from app.events import PostWasCreated
+from dataclasses import dataclass
 
+
+@dataclass
+class DummyEvent():
+    title: str
+    content: str
 
 def test_persist_event():
     stream_id = uuid.uuid4()
-    event = PostWasCreated(
+    event = DummyEvent(
         title="FooBar", 
         content="Lorem Ipsum"
     )

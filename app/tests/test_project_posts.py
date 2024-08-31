@@ -7,6 +7,7 @@ from app.events import PostWasCreated
 def test_create_posts():
     EventStore.reset_store()
     stream_id = uuid.uuid4()
+
     event = PostWasCreated(
         title="FooBar", 
         content="Lorem Ipsum"
