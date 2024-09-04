@@ -6,8 +6,8 @@ from commons.event_store import EventStore
 
 @fixture 
 def event_store():
+    yield EventStore
     EventStore.reset_store()
-    return EventStore
 
 @fixture
 def post():
