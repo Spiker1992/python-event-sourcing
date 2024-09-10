@@ -1,10 +1,14 @@
 
+from collections import defaultdict
+import uuid
+
+
 class BaseTable:
-    data: list = []
+    data = {}
 
     @classmethod
     def insert(cls, data):
-        cls.data.append(data)
+        cls.data[data.stream_id] = data
 
     @classmethod
     def update(cls, pk, data):
@@ -19,4 +23,13 @@ class BaseTable:
         if len(cls.data) == 0:
             raise Exception("No data in the table")
         
-        return cls.data[-1]
+        key = list(cls.data.keys())[-1]
+        
+        return cls.data[key]
+    
+    @classmethod
+    def get(cls, stream_id: uuid.UUID):
+        if len(cls.data) == 0:
+            raise Exception("No data in the table")
+        
+        return cls.data.get(stream_id)

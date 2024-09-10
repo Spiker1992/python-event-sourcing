@@ -11,7 +11,7 @@ class EventStore:
     def append(cls, stream_id: uuid.UUID, event) -> None:
         cls.events[stream_id].append(event)
 
-        EventBus.publish(event)
+        EventBus.publish(stream_id, event)
 
     @classmethod
     def reset_store(cls) -> None:

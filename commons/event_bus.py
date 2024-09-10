@@ -8,6 +8,6 @@ class EventBus:
         cls._listeners[event_type].append(listener)
 
     @classmethod
-    def publish(cls, event):
+    def publish(cls, stream_id, event):
         for listener in cls._listeners[type(event)]:
-            (listener).handle(event)
+            (listener).handle(stream_id, event)
