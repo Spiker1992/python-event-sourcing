@@ -10,6 +10,7 @@ class Post:
     stream_id: uuid.UUID
     title: str  
     content: str
+    published: bool = False
 
     objects = PostTable
 
