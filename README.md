@@ -39,14 +39,16 @@ The goal is to demonstrate usage of different approaches using python only. In t
 
 ### Docker setup
 
-1. `docker-compose build`
-1. `docker-compose up -d`
-1. `docker exec -it python-es-python-app-1 bash`
+1. Copy and paste `docker-compose build` to build docker image
+1. Copy and paste `docker-compose up -d` to spin up docker image
+
+Once docker is running you can access container using command below:
+`docker exec -it python-es-python-app-1 bash`.
 
 
 ### Running tests
 
-1. After accessing docker, run `pytest`
+1. Within docker container, run `pytest`.
 
 ## Explore this code base
 
