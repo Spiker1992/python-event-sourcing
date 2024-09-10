@@ -1,18 +1,16 @@
 import uuid
-from app.models import Post, PostTable
-from commons.event_store import EventStore
+from app.models import Post
 from app.events import PostWasCreated
 
 
-def test_create_posts():
-    EventStore.reset_store()
+def test_create_posts(event_store):  
     stream_id = uuid.uuid4()
 
     event = PostWasCreated(
         title="FooBar", 
         content="Lorem Ipsum"
     )
-    EventStore.append(stream_id, event)
+    event_store.append(stream_id, event)
 
     post = Post.objects.latest()
     assert post.title == event.title  
