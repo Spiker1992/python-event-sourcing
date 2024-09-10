@@ -1,5 +1,13 @@
 from collections import defaultdict
 
+class Listener:
+   ...
+
+class Projection(Listener):
+   ...
+
+class SideEffect(Listener):
+   ...
 
 class EventBus:
     _listeners = defaultdict(list)
@@ -11,4 +19,4 @@ class EventBus:
     @classmethod
     def publish(cls, event):
         for listener in cls._listeners[type(event)]:
-            listener(event)
+            (listener).handle(event)
