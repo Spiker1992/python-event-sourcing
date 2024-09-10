@@ -9,7 +9,7 @@ The goal is to demonstrate usage of different approaches using python only. In t
 - [Key Concepts](#key-concepts)
 - [Examples Included](#examples-included)
 - [How to use this repo locally](#how-to-use-this-repo-locally)
-- [Explore this code base](#explore-this-code-base)
+- [How to explore this code base](#explore-this-code-base)
 
 
 ## Key Concepts:
