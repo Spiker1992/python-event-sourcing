@@ -1,6 +1,6 @@
 from app.events import PostWasCreated
 from app.models import Post
-from commons.event_bus import Projection
+from commons.event_listeners import Projection
  
 
 class CreatePost(Projection):

@@ -1,14 +1,5 @@
 from collections import defaultdict
 
-class Listener:
-   ...
-
-class Projection(Listener):
-   ...
-
-class SideEffect(Listener):
-   ...
-
 class EventBus:
     _listeners = defaultdict(list)
 
