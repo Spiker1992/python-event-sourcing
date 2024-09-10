@@ -8,7 +8,8 @@ The goal is to demonstrate usage of different approaches using python only. In t
 
 - [Key Concepts](#key-concepts)
 - [Examples Included](#examples-included)
-- [Getting Started](#getting-started)
+- [How to use this repo locally](#how-to-use-this-repo-locally)
+- [Explore this code base](#explore-this-code-base)
 
 
 ## Key Concepts:
@@ -34,16 +35,7 @@ The goal is to demonstrate usage of different approaches using python only. In t
 - **Data pruning**: pruning old events to manage storage costs.
 - **Data erase**: Encrytion shredding
 
-## Getting Started:
-
-Refer to the `tests` folder for example usage.
-
-Example use of commands:
-- `app/tests/test_create_post_command.py` - shows a basic use of a command with an event being persisted.
-- `app/tests/test_publish_post_command.py` - shows a command that has validation in place. Validation checks if command can be executed.
-
-Example use of projections:
-- `app/tests/test_project_posts.py` - show an example of how we can listen to events. Projection is just one example of a side effect.
+## How to use this repo locally:
 
 ### Docker setup
 
@@ -55,3 +47,14 @@ Example use of projections:
 ### Running tests
 
 1. After accessing docker, run `pytest`
+
+## Explore this code base
+
+Refer to the `tests` folder for example usage.
+
+Example use of commands:
+- `app/tests/test_create_post_command.py` - shows a basic use of a command with an event being persisted.
+- `app/tests/test_publish_post_command.py` - shows a command that has validation in place. Validation checks if command can be executed.
+
+Example use of projections:
+- `app/tests/test_project_posts.py` - show an example of how we can listen to events. Projection is just one example of a side effect.
