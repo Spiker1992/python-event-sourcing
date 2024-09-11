@@ -6,17 +6,16 @@ The goal is to demonstrate usage of different approaches using python only. In t
 
 ## Table of Contents:
 
-- [Key Concepts](#key-concepts)
+- [Concept](#concept)
 - [Examples Included](#examples-included)
 - [How to use this repo locally](#how-to-use-this-repo-locally)
 - [How to explore this code base](#explore-this-code-base)
 
 
-## Key Concepts:
+## Concept:
 
-- **Events**: Atomic units of change that represent something happening in your system.
-- **Event Store**: A specialized database for storing and retrieving events.
-- **Materialized Views**: Projections of the current state derived from replaying events.
+![image](https://github.com/user-attachments/assets/85929309-c9bc-4cc3-b976-4d52410f1feb)
+
 
 ## Examples Included:
 
